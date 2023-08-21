@@ -10,7 +10,7 @@
 - Supabase 
 - Git / Github
 
-  📌 기능 및 담당자
+📌 기능 및 담당자
   - 팀장 서한별
       - FingerPrint
       - Docker / Jenkins
