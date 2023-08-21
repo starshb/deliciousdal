@@ -21,17 +21,18 @@
 📌 Architecture  
 <br>
 <br>
-<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/138543543/0eabcd22-25d6-488c-bc97-126296db7f1e"/>
+<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/65875927/44928b81-37d7-485f-bb5a-a8f1ec0fda14"/>
+
 <hr>
 📌 Wireframe 
 <br>
 <br>
-<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/138543543/1168c8e5-5810-44e3-ac14-8f43aec207e3"/>
+<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/65875927/f8d5e1b8-6540-48f1-a3cf-5ccc55623246"/>
 <hr>
 📌 ERD 
 <br>
 <br>
-<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/138543543/ef1ec890-b6b5-481b-aab7-98b33cdd40c7"/>
+<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/65875927/75f10cbd-532c-4a85-b0fd-88e86acb73c9"/>
 <hr>
 📌 Sequence Diagram 
 <br>
