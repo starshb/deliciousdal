@@ -12,7 +12,6 @@
 .buildlog/
 .history
 .svn/
-migrate_working_dir/
 
 # IntelliJ related
 *.iml
@@ -60,8 +59,6 @@ analysis_benchmark.json
 .pub-cache/
 .pub/
 build/
-/build/
-
 flutter_*.png
 linked_*.ds
 unlinked.ds
@@ -130,6 +127,31 @@ coverage/
 
 # Symbols
 app.*.symbols
+
+# Exceptions to above rules.
+!**/ios/**/default.mode1v3
+!**/ios/**/default.mode2v3
+!**/ios/**/default.pbxuser
+!**/ios/**/default.perspectivev3
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+!/dev/ci/**/Gemfile.lock
+!.vscode/settings.json
+
+# Miscellaneous
+migrate_working_dir/
+
+# IntelliJ related
+
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+/build/
+
+# Symbolication related
 
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
