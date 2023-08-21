@@ -23,7 +23,7 @@
       - Supabase
       - kakao map api
    
-  📌 작업기간 
+  📌 작업기간 <br>
     - 2023 06.31 ~ 2023.08.25
 <hr>
 📌 Trouble Shooting
