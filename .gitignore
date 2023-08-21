@@ -12,6 +12,7 @@
 .buildlog/
 .history
 .svn/
+migrate_working_dir/
 
 # IntelliJ related
 *.iml
@@ -59,6 +60,8 @@ analysis_benchmark.json
 .pub-cache/
 .pub/
 build/
+/build/
+
 flutter_*.png
 linked_*.ds
 unlinked.ds
