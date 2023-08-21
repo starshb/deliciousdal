@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:deliciousdal/common/component/custom_text_form_field.dart';
 import 'package:deliciousdal/common/layout/default_layout.dart';
+import 'package:deliciousdal/user/view/login_screen.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -130,7 +131,7 @@ class _JoinScreenState extends State<JoinScreen> {
 
                       Navigator.of(context).pushAndRemoveUntil(
                         MaterialPageRoute(
-                          builder: (_) => RootTab(),
+                          builder: (_) => LoginScreen(),
                         ),
                         (route) => false,
                       );
