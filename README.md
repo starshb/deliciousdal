@@ -9,6 +9,19 @@
 - Swagger
 - Supabase 
 - Git / Github
+
+  📌 기능 및 담당자
+  - 팀장 서한별
+      - FingerPrint
+      - Docker / Jenkins
+      - 결제
+      - Chatting
+      - Call
+  - 서기 한혜진
+      - 회원가입
+      - JWT
+      - Supabase
+      - kakao map api
 <hr>
 
 📌 Trouble Shooting
