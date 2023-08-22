@@ -27,8 +27,8 @@
       - 2023 06.31 ~ 2023.08.25
 
   📌 Canva <br>
-  https://www.canva.com/design/DAFpty02XJk/BdPb28KjJeGBHYrE6alRoA/edit
-
+  [https://www.canva.com/design/DAFpty02XJk/BdPb28KjJeGBHYrE6alRoA/edit
+](https://www.canva.com/design/DAFpty02XJk/Z8rLU_S46S-vTBtD0TBgEQ/view?utm_content=DAFpty02XJk&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
   📌 Task Tool <br>
   https://github.com/users/gksgpwls0306/projects/3
