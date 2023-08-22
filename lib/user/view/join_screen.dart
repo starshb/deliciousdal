@@ -24,10 +24,6 @@ class _JoinScreenState extends State<JoinScreen> {
   String Ckpass = '';
   final formkey = GlobalKey<FormState>();
 
-  Future ckEmail() async {
-    final resp = await client.from('table');
-  }
-
   @override
   Widget build(BuildContext context) {
     return DefaultLayout(
@@ -171,13 +167,12 @@ class _JoinScreenState extends State<JoinScreen> {
                                 .hasMatch(value)) {
                               return '숫자만 입력가능합니다.';
                             }
-                            if (value.length < 8) {
+                            if (value.length != 8) {
                               return '8자리를 입력해야합니다.';
                             }
                           }
                         },
                         keyboardType: TextInputType.number,
-                        maxLength: 8,
                       ),
                       SizedBox(
                         height: 16.0,
@@ -197,13 +192,12 @@ class _JoinScreenState extends State<JoinScreen> {
                                 .hasMatch(value)) {
                               return '숫자만 입력가능합니다.';
                             }
-                            if (value.length < 11) {
+                            if (value.length != 11) {
                               return '11자리를 입력해야합니다.';
                             }
                           }
                         },
                         keyboardType: TextInputType.phone,
-                        maxLength: 11,
                       ),
                       SizedBox(
                         height: 16.0,

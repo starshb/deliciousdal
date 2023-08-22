@@ -7,7 +7,6 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final bool autofocus;
   final int maxLines;
-  final int? maxLength;
   final ValueChanged<String>? onChanged;
   dynamic keyboardType;
   final String? Function(String?)? validator;
@@ -19,7 +18,6 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.autofocus = false,
     this.maxLines = 1,
-    this.maxLength,
     this.keyboardType = TextInputType.text,
     required this.onChanged,
     Key? key,
@@ -41,7 +39,6 @@ class CustomTextFormField extends StatelessWidget {
       autofocus: autofocus,
       onChanged: onChanged,
       maxLines: maxLines,
-      maxLength: maxLength,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.all(20),
         hintText: hintText,
