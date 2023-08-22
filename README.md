@@ -51,8 +51,7 @@
 <hr>
 📌 Sequence Diagram 
 <br>
-<br>
-<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/65875927/fc251fef-b6d4-400a-9ab2-f6a8ce732a21"/>
+<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/138543543/1db8a890-c5ee-4921-bbe2-846956b59bca"/>
 <br>
 <br>
 <hr>
