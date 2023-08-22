@@ -25,6 +25,9 @@
    
   📌 작업기간 <br>
       - 2023 06.31 ~ 2023.08.25
+
+  📌 Canva <br>
+  https://www.canva.com/design/DAFpty02XJk/BdPb28KjJeGBHYrE6alRoA/edit
 <hr>
 📌 Trouble Shooting <br>
 - 팀원 간의 플러터 채널 충돌로 인한 에러 <br>
