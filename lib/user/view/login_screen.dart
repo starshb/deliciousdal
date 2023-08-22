@@ -168,6 +168,24 @@ class _LoginScreenState extends State<LoginScreen> {
                     '로그인',
                   ),
                 ),
+                // ElevatedButton(
+                //   onPressed: () async {
+                //     final resp =
+                //         await client.auth.signInWithOAuth(Provider.kakao);
+                //     // const {data, error} = await client.auth.signInWithOAuth(Provider.kakao);
+                //     // print('카톡 로그인 정보 = ${SCOPE_ID}');
+                //   },
+                //   child: Text(
+                //     '카카오 로그인',
+                //     style: TextStyle(
+                //       color: Colors.brown,
+                //       fontWeight: FontWeight.w600,
+                //     ),
+                //   ),
+                //   style: ElevatedButton.styleFrom(
+                //     backgroundColor: Colors.amber,
+                //   ),
+                // ),
                 TextButton(
                   onPressed: () async {
                     Navigator.of(context).push(

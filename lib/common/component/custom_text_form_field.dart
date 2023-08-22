@@ -6,13 +6,21 @@ class CustomTextFormField extends StatelessWidget {
   final String? errorText;
   final bool obscureText;
   final bool autofocus;
+  final int maxLines;
+  final int? maxLength;
   final ValueChanged<String>? onChanged;
+  dynamic keyboardType;
+  final String? Function(String?)? validator;
 
-  const CustomTextFormField({
+  CustomTextFormField({
+    this.validator,
     this.hintText,
     this.errorText,
     this.obscureText = false,
     this.autofocus = false,
+    this.maxLines = 1,
+    this.maxLength,
+    this.keyboardType = TextInputType.text,
     required this.onChanged,
     Key? key,
   }) : super(key: key);
@@ -26,10 +34,14 @@ class CustomTextFormField extends StatelessWidget {
     ));
 
     return TextFormField(
+      validator: validator,
+      keyboardType: keyboardType,
       cursorColor: PRIMARY_COLOR,
       obscureText: obscureText, //비밀번호 입력시 가림
       autofocus: autofocus,
       onChanged: onChanged,
+      maxLines: maxLines,
+      maxLength: maxLength,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.all(20),
         hintText: hintText,
