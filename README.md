@@ -57,5 +57,5 @@
 <br>
 <hr>
 📌 FingerPrint 
-[fin.webm](https://github.com/gksgpwls0306/deliciousdal/assets/138543543/c8ff337e-af94-4dd9-9ac1-d7cec80351cb)
+<img width="40%" src="https://github.com/gksgpwls0306/deliciousdal/assets/138543543/00d616bf-947a-4b9d-aad2-b475c5a07492"/>
 
