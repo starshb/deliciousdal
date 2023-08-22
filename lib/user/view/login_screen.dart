@@ -24,6 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
   String uid = '';
   String password = '';
   late final User? user;
+  final formkey = GlobalKey<FormState>();
 
   Future<String?> userLogin({
     required final String uid,
@@ -60,9 +61,6 @@ class _LoginScreenState extends State<LoginScreen> {
     //         (route) => false);
     //   });
     // }
-
-    final User? user = client.auth.currentUser;
-    print(user);
     return DefaultLayout(
       child: SingleChildScrollView(
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -84,121 +82,109 @@ class _LoginScreenState extends State<LoginScreen> {
                   'assets/logo.png',
                   width: MediaQuery.of(context).size.width / 3 * 2,
                 ),
-                CustomTextFormField(
-                  onChanged: (String value) {
-                    uid = value;
-                  },
-                  hintText: '이메일을 입력해주세요',
-                  // errorText: '에러가 있습니다',
-                ),
-                const SizedBox(
-                  height: 16.0,
-                ),
-                CustomTextFormField(
-                  onChanged: (String value) {
-                    password = value;
-                  },
-                  hintText: '비밀번호를 입력해주세요',
-                  obscureText: true,
-                ),
-                const SizedBox(
-                  height: 16.0,
-                ),
-                ElevatedButton(
-                  onPressed: () async {
-                    //id:비밀번호
-                    // final rawString = '$uid:$password';
-                    // print(rawString);
-                    // Codec<String, String> stringToBase64 = utf8.fuse(base64);
-                    //
-                    // String token = stringToBase64.encode(rawString);
-                    // final resp = await dio.post(
-                    //   'http://$ip/auth/login',
-                    //   options: Options(
-                    //     headers: {
-                    //       'authorization': 'Basic $token',
-                    //     },
-                    //   ),
-                    // );
-                    // final refreshToken = resp.data['refreshToken'];
-                    // final accessToken = resp.data['accessToken'];
-                    //
-                    // await storage.write(
-                    //     key: REFRESH_TOKEN_KEY, value: refreshToken);
-                    // await storage.write(
-                    //     key: ACCESS_TOKEN_KEY, value: accessToken);
+                Form(
+                  key: this.formkey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      CustomTextFormField(
+                        onChanged: (String value) {
+                          uid = value;
+                        },
+                        hintText: '이메일을 입력해주세요',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return '필수 입력사항입니다.';
+                          } else {
+                            if (!RegExp(
+                                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+                                .hasMatch(value)) {
+                              return '잘못된 이메일 형식입니다.';
+                            }
+                          }
+                        },
+                      ),
+                      const SizedBox(
+                        height: 16.0,
+                      ),
+                      CustomTextFormField(
+                        onChanged: (String value) {
+                          password = value;
+                        },
+                        hintText: '비밀번호를 입력해주세요',
+                        obscureText: true,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return '필수 입력사항입니다.';
+                          } else {
+                            if (value.length < 8 || value.length > 15) {
+                              return '8자 이상 15자 이내로 입력하세요.';
+                            }
+                          }
+                        },
+                      ),
+                      const SizedBox(
+                        height: 16.0,
+                      ),
+                      ElevatedButton(
+                        onPressed: () async {
+                          if (this.formkey.currentState!.validate()) {
+                            // ScaffoldMessenger.of(context).showSnackBar(
+                            //   SnackBar(
+                            //     content: Row(
+                            //       children: [
+                            //         Icon(
+                            //           Icons.priority_high_outlined,
+                            //           color: Colors.red,
+                            //         ),
+                            //         Text(
+                            //           '아이디와 비밀번호를 확인해주세요.',
+                            //           style: TextStyle(
+                            //             color: Colors.white,
+                            //           ),
+                            //         ),
+                            //       ],
+                            //     ),
+                            //     backgroundColor: BODY_TEXT_COLOR,
+                            //   ),
+                            // );
 
-                    if (uid == null || password == null) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Row(
-                            children: [
-                              Icon(
-                                Icons.priority_high_outlined,
-                                color: Colors.red,
+                            final resp = await client.auth.signInWithPassword(
+                              email: uid,
+                              password: password,
+                            );
+
+                            Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(
+                                builder: (_) => RootTab(),
                               ),
-                              Text(
-                                '아이디와 비밀번호를 확인해주세요.',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                          backgroundColor: BODY_TEXT_COLOR,
+                              (route) => false,
+                            );
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: PRIMARY_COLOR,
                         ),
-                      );
-                    }
-                    final resp = await client.auth.signInWithPassword(
-                      email: uid,
-                      password: password,
-                    );
-
-                    Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(
-                        builder: (_) => RootTab(),
+                        child: Text(
+                          '로그인',
+                        ),
                       ),
-                      (route) => false,
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: PRIMARY_COLOR,
-                  ),
-                  child: Text(
-                    '로그인',
-                  ),
-                ),
-                // ElevatedButton(
-                //   onPressed: () async {
-                //     final resp =
-                //         await client.auth.signInWithOAuth(Provider.kakao);
-                //     // const {data, error} = await client.auth.signInWithOAuth(Provider.kakao);
-                //     // print('카톡 로그인 정보 = ${SCOPE_ID}');
-                //   },
-                //   child: Text(
-                //     '카카오 로그인',
-                //     style: TextStyle(
-                //       color: Colors.brown,
-                //       fontWeight: FontWeight.w600,
-                //     ),
-                //   ),
-                //   style: ElevatedButton.styleFrom(
-                //     backgroundColor: Colors.amber,
-                //   ),
-                // ),
-                TextButton(
-                  onPressed: () async {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => JoinScreen(),
+                      TextButton(
+                        onPressed: () async {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => JoinScreen(),
+                            ),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          foregroundColor: Colors.black,
+                        ),
+                        child: Text(
+                          '회원가입',
+                        ),
                       ),
-                    );
-                  },
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.black,
-                  ),
-                  child: Text(
-                    '회원가입',
+                    ],
                   ),
                 ),
               ],
