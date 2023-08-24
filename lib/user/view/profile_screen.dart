@@ -76,21 +76,21 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-            OutlinedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => MyApp(),
-                  ),
-                );
-              },
-              child: Text(
-                '결제정보',
-                style: TextStyle(
-                  color: PRIMARY_COLOR,
-                ),
-              ),
-            ),
+            // OutlinedButton(
+            //   onPressed: () {
+            //     Navigator.of(context).push(
+            //       MaterialPageRoute(
+            //         builder: (_) => MyApp(),
+            //       ),
+            //     );
+            //   },
+            //   child: Text(
+            //     '결제정보',
+            //     style: TextStyle(
+            //       color: PRIMARY_COLOR,
+            //     ),
+            //   ),
+            // ),
             ElevatedButton(
               onPressed: () async {
                 await client.auth.signOut();
