@@ -149,17 +149,30 @@ class _LoginScreenState extends State<LoginScreen> {
                             //   ),
                             // );
 
-                            final resp = await client.auth.signInWithPassword(
-                              email: uid,
-                              password: password,
-                            );
-
-                            Navigator.of(context).pushAndRemoveUntil(
-                              MaterialPageRoute(
-                                builder: (_) => RootTab(),
-                              ),
-                              (route) => false,
-                            );
+                            try {
+                              final resp = await client.auth.signInWithPassword(
+                                email: uid,
+                                password: password,
+                              );
+                              Navigator.of(context).pushAndRemoveUntil(
+                                MaterialPageRoute(
+                                  builder: (_) => RootTab(),
+                                ),
+                                (route) => false,
+                              );
+                            } catch (e) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    '아이디나 비밀번호를 다시 한 번 확인해주세요.',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  backgroundColor: BODY_TEXT_COLOR,
+                                ),
+                              );
+                            }
                           }
                         },
                         style: ElevatedButton.styleFrom(
