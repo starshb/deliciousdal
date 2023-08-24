@@ -8,7 +8,7 @@
 - Flutter 
 - Swagger
 - Supabase 
-- Git / Github
+- Git / Github 
 
 📌 기능 및 담당자
   - 팀장 서한별
