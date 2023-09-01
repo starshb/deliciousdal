@@ -227,10 +227,11 @@ class _JoinScreenState extends State<JoinScreen> {
                               );
                             }
                           } catch (e) {
+                            print(e.toString());
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(
-                                  '모든 항목을 입력해주세요.',
+                                  '인터넷을 확인하시거나, 잠시만 기다려주세요.',
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
