@@ -1,5 +1,5 @@
 📌 Projects Name  
-- 맛있달 
+- 맛있달 ()
 
 📌 Technology Stack
 - JWT 
@@ -17,6 +17,7 @@
       - 결제
       - Chatting
       - Call
+        
   - 서기 한혜진
       - 회원가입
       - JWT
