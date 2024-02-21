@@ -1,5 +1,5 @@
 📌 Projects Name  
-- 맛있달 ()
+- 맛있달 (배달 앱)
 
 📌 Technology Stack
 - JWT 
