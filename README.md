@@ -4,7 +4,7 @@
 📌 Technology Stack
 - JWT 
 - Docker & Jenkins
-- Node.js  
+- Node.js   
 - Flutter 
 - Swagger
 - Supabase 
